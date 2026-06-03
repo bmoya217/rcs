@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, Sparkles } from "lucide-react";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import { ContactCta } from "@/components/ContactCta";
-import { GalleryPair } from "@/components/GalleryPair";
+import { ImageSlider } from "@/components/ImageSlider";
 import { ServiceCard } from "@/components/ServiceCard";
 import { featuredGallery } from "@/lib/gallery";
 import { highlights, services, serviceSlugs, site } from "@/lib/site";
@@ -189,7 +189,7 @@ export default function HomePage() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {featuredGallery.map((item) => (
-              <GalleryPair key={item.id} item={item} />
+              <ImageSlider key={item.id} item={item} />
             ))}
           </div>
         </div>

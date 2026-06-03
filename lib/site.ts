@@ -43,7 +43,7 @@ export const services = {
     eyebrow: "Deep steam cleaning",
     href: "/services/carpet-cleaning",
     icon: Home,
-    imagePublicId: "services/living_room",
+    imagePublicId: "services/carpet",
     summary:
       "Truck-mounted carpet cleaning that helps remove stains, odors, allergens, and residue so carpets look brighter and stay cleaner longer.",
     intro:
@@ -255,6 +255,6 @@ export const highlights = [
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Before & After" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];

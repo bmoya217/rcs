@@ -1,27 +1,31 @@
-export type CloudinaryImageOptions = {
+import "server-only";
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+export type CarouselImage = {
   publicId: string;
-  width?: number;
-  height?: number;
-  crop?: "fill" | "fit" | "limit";
+  width: number;
+  height: number;
 };
 
-const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+export const getCarouselImages = async (
+  folder: string,
+  maxResults = 12,
+): Promise<CarouselImage[]> => {
+  const result = await cloudinary.search
+    .expression(`folder:${folder}`)
+    .sort_by("created_at", "desc")
+    .max_results(maxResults)
+    .execute();
 
-export const getCloudinaryUrl = ({
-  publicId,
-  width = 1200,
-  height,
-  crop = "fill",
-}: CloudinaryImageOptions) => {
-  if (!cloudName) {
-    return "/images/placeholder.svg";
-  }
-
-  const transforms = ["f_auto", "q_auto", `c_${crop}`, `w_${width}`];
-
-  if (height) {
-    transforms.push(`h_${height}`);
-  }
-
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transforms.join(",")}/${publicId}`;
+  return result.resources.map((image: any) => ({
+    publicId: image.public_id,
+    width: image.width,
+    height: image.height,
+  }));
 };

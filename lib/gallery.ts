@@ -6,9 +6,6 @@ export type GalleryItem = {
   afterPublicId: string;
 };
 
-// For MVP: manually list the best jobs after your dad uploads them to Cloudinary.
-// Suggested Cloudinary folder: /gallery/before-after
-// Later you can replace this with Admin API listing by folder/tag.
 export const featuredGallery: GalleryItem[] = [
   {
     id: "living-room-traffic-lanes",
