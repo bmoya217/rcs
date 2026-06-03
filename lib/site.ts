@@ -13,7 +13,7 @@ import {
 
 export const site = {
   name: "Royal Carpet Specialists",
-  tagline: "Family-owned carpet, tile, and upholstery cleaning.",
+  tagline: "Owner-operated carpet, tile, and upholstery cleaning.",
   phone: "(909) 802-4624",
   phoneHref: "tel:+19098024624",
   email: "george@royalcarpetspecialists.com",
@@ -45,14 +45,14 @@ export const services = {
     icon: Home,
     imagePublicId: "services/carpet",
     summary:
-      "Truck-mounted carpet cleaning that helps remove stains, odors, allergens, and residue so carpets look brighter and stay cleaner longer.",
+      "Truck-mounted carpet cleaning for traffic lanes, pet spots, spills, stairs, rentals, and rooms that need a real reset.",
     intro:
-      "Royal Carpet Specialists uses a brushless rotary steam cleaning process designed to restore color and resiliency in a single visit. It is a practical, professional clean for everyday wear, pet traffic, spills, and older carpets that need a reset.",
+      "Royal Carpet Specialists cleans lived-in carpet: traffic lanes, pet spots, spills, stairs, rentals, and older rooms that have not been cleaned in a while. George uses truck-mounted steam cleaning equipment and keeps the process direct, careful, and practical.",
     bullets: [
-      "Truck-mounted hot water extraction",
-      "Helps lift stains, soil, allergens, and odors",
-      "Low-residue cleaning for a fresher finish",
-      "Great for bedrooms, stairs, living rooms, rentals, and move-outs",
+      "Truck-mounted hot water extraction for deeper cleaning",
+      "Good for bedrooms, stairs, living rooms, rentals, and move-outs",
+      "Helps with pet spots, traffic lanes, spills, and everyday soil",
+      "Optional Scotchgard protection after cleaning",
     ],
     process: [
       "Walk the areas and identify spots, traffic lanes, and concerns.",
@@ -69,9 +69,9 @@ export const services = {
     icon: Droplets,
     imagePublicId: "services/tile",
     summary:
-      "Professional tile and grout cleaning for kitchens, bathrooms, entryways, and other hard-surface areas that need a brighter finish.",
+      "Tile and grout cleaning for kitchens, bathrooms, entryways, and hard-surface areas that mopping cannot fully brighten.",
     intro:
-      "Mopping can leave soil behind in grout lines. A professional tile cleaning helps cut through buildup and bring the surface back to a cleaner, more even look.",
+      "Mopping can leave soil behind in grout lines, especially in kitchens, baths, entryways, and busy hallways. George can clean tile and grout while the truck is already set up for carpet or upholstery.",
     bullets: [
       "Targets dingy grout lines and surface buildup",
       "Good for kitchens, baths, halls, and entryways",
@@ -93,9 +93,9 @@ export const services = {
     icon: Sparkles,
     imagePublicId: "services/upholstery",
     summary:
-      "Refresh sofas, chairs, sectionals, and other upholstered furniture that has collected stains, dust, allergens, and everyday grime.",
+      "Cleaning for sofas, chairs, cushions, sectionals, and other upholstered furniture with everyday spots, dust, and use.",
     intro:
-      "Furniture gets used hard but cleaned rarely. Upholstery cleaning can help restore neglected pieces and make frequently used furniture feel cleaner and more comfortable.",
+      "Furniture gets used every day and cleaned rarely. Upholstery cleaning can refresh sofas, chairs, cushions, and sectionals, especially in homes with pets, kids, guests, and daily use.",
     bullets: [
       "Great for sofas, chairs, cushions, and sectionals",
       "Targets visible spots and accumulated dirt",
@@ -117,9 +117,9 @@ export const services = {
     icon: Flame,
     imagePublicId: "services/fire",
     summary:
-      "Fire-damaged carpet does not always need to be replaced. Call to see whether cleaning or restoration is a realistic option.",
+      "Assessment and cleaning guidance for carpet affected by smoke or fire damage when replacement may not be the only option.",
     intro:
-      "Fire damage can be complicated, but replacement is not always the only path. Royal Carpet Specialists can assess the situation and explain what may be salvageable.",
+      "Fire damage can be complicated, but replacement is not always the only path. George can look at the affected carpet and explain what may be realistic before you spend money replacing everything.",
     bullets: [
       "Assessment for carpet affected by smoke or fire damage",
       "May help reduce replacement costs when restoration is practical",
@@ -143,7 +143,7 @@ export const services = {
     summary:
       "Odor treatment for carpet and upholstery affected by pets, spills, smoke, moisture, or everyday use.",
     intro:
-      "Some odors sit below the surface. Odor elimination focuses on the source instead of just covering smells with fragrance.",
+      "Some odors sit below the surface. Odor treatment focuses on the source instead of just covering smells with fragrance, including many pet odor situations.",
     bullets: [
       "Helpful for pet odors, smoke smells, spills, and musty areas",
       "Can be combined with carpet or upholstery cleaning",
@@ -165,9 +165,9 @@ export const services = {
     icon: StretchHorizontal,
     imagePublicId: "services/stretch",
     summary:
-      "Repair ripples, wrinkles, loose carpet, and small damaged areas so rooms look cleaner and safer before or after cleaning.",
+      "Repair ripples, wrinkles, loose carpet, and small damaged areas so rooms look cleaner and safer.",
     intro:
-      "Carpet that has loosened, wrinkled, or pulled away can make a room look older than it is. Stretching and repair can improve both appearance and usability.",
+      "Carpet that has loosened, wrinkled, or pulled away can make a room look older than it is. Stretching and repair can improve appearance, reduce trip hazards, and help you get more life out of existing carpet.",
     bullets: [
       "Helps correct wrinkles, ripples, and loose carpet",
       "Can improve appearance before a deep cleaning",
@@ -189,9 +189,9 @@ export const services = {
     icon: Gem,
     imagePublicId: "services/marble",
     summary:
-      "Care for marble and travertine surfaces that need cleaning, attention, or a more polished finished appearance.",
+      "Cleaning and care for marble and travertine surfaces that need attention, refreshment, or a cleaner finish.",
     intro:
-      "Natural stone needs a different approach than carpet or standard tile. The goal is to improve appearance while respecting the material.",
+      "Natural stone needs a different approach than carpet or standard tile. George can talk through the surface, the current finish, and what kind of result is realistic before starting.",
     bullets: [
       "Service for marble and travertine floors and surfaces",
       "Helps address dullness and surface soil",
@@ -215,7 +215,7 @@ export const services = {
     summary:
       "Add stain and water-repellent protection to carpet, rugs, and upholstery after cleaning.",
     intro:
-      "Scotchgard can be applied to various fabrics, furniture, and carpets as a stain and durable water repellent. It is a smart add-on after a fresh cleaning.",
+      "Scotchgard can be applied to carpet, rugs, and many upholstery fabrics after cleaning. It is a smart add-on for busy homes, family rooms, stairs, and furniture that gets used often.",
     bullets: [
       "Adds stain and water-repellent protection",
       "Useful for carpet, rugs, sofas, and chairs",
@@ -237,18 +237,18 @@ export type Service = (typeof services)[ServiceSlug];
 export const highlights = [
   {
     icon: BadgeCheck,
-    title: "Family-owned",
-    text: "Local service with direct communication from George.",
+    title: "Owner-operated",
+    text: "When you call, you talk with George directly instead of a call center.",
   },
   {
     icon: Brush,
     title: "30+ years",
-    text: "Decades of carpet, tile, and upholstery cleaning experience.",
+    text: "Decades of carpet, tile, upholstery, repair, and odor work.",
   },
   {
     icon: Home,
-    title: "Residential & small business",
-    text: "Homes, rentals, offices, and move-out cleanings.",
+    title: "Two-person local crew",
+    text: "Most jobs are handled by George and one helper, not a rotating crew.",
   },
 ];
 
@@ -257,4 +257,64 @@ export const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+];
+
+export const serviceAreas = [
+  "Upland",
+  "La Verne",
+  "Claremont",
+  "Rancho Cucamonga",
+  "Ontario",
+  "Montclair",
+  "Pomona",
+  "San Dimas",
+  "Glendora",
+  "Chino",
+  "Chino Hills",
+  "Fontana",
+  "Rialto",
+  "Covina",
+  "Walnut",
+  "Diamond Bar",
+];
+
+export const appointmentPrep = [
+  "Please make sure there is access to a working outdoor hose spigot for the truck-mounted cleaning system.",
+  "Clear a parking spot as close as practical to the rooms being cleaned so the hoses can reach safely.",
+  "Pick up small items, cords, toys, and breakables before the appointment.",
+  "Move small furniture if you can. If something is difficult, ask George what makes sense when you schedule.",
+  "Point out pet spots, stains, odors, delicate areas, or carpet repairs before cleaning starts.",
+];
+
+export const faqs = [
+  {
+    question: "Do you need access to water?",
+    answer:
+      "Yes. For most truck-mounted cleaning jobs, George needs access to a working outdoor hose spigot and a parking spot close enough for the hoses to reach the cleaning area.",
+  },
+  {
+    question: "How long does carpet take to dry?",
+    answer:
+      "Most carpet is dry the same day or overnight. A practical range is about 6 to 24 hours depending on carpet thickness, humidity, airflow, soil level, and whether protector was applied. Fans, air conditioning, and open interior doors can help.",
+  },
+  {
+    question: "Do I need to move furniture?",
+    answer:
+      "Please pick up small items and move light furniture if you can. George can talk through larger pieces when you schedule and help decide what should be moved for the job.",
+  },
+  {
+    question: "Can you remove pet odor?",
+    answer:
+      "Yes, pet odor treatment is available for carpet and upholstery. Results depend on the source and how deep the odor has reached, so it helps to point out every affected area before cleaning starts.",
+  },
+  {
+    question: "Do you clean stairs and upholstery?",
+    answer:
+      "Yes. Royal Carpet Specialists cleans carpeted stairs, sofas, chairs, cushions, sectionals, and other upholstery.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer:
+      "Royal Carpet Specialists is based in Upland and regularly serves nearby Inland Empire and foothill communities. Larger jobs may be possible farther out, so call to confirm.",
+  },
 ];

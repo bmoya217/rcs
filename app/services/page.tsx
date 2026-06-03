@@ -8,9 +8,13 @@ export default function ServicesPage() {
       <section className="page-section bg-cream">
         <div className="section-container-narrow text-center">
           <p className="section-eyebrow">Our Services</p>
-          <h1 className="section-title-xl">One call for cleaner carpets, floors, furniture, and more.</h1>
+          <h1 className="section-title-xl">
+            Carpet, tile, upholstery, odor, and repair work.
+          </h1>
           <p className="section-description mx-auto">
-            Choose a service below to see what it helps with, what images to collect, and how the page should eventually be supported by Cloudinary before/after examples.
+            Call George to talk through what needs cleaning, where the problem
+            spots are, and what kind of result is realistic for your home,
+            rental, office, or small business.
           </p>
         </div>
       </section>

@@ -10,8 +10,8 @@ export const Footer = () => {
         <div>
           <p className="text-2xl font-black">{site.name}</p>
           <p className="mt-4 max-w-md text-sm leading-7 text-white/75">
-            Family-owned carpet, tile, and upholstery cleaning serving Upland
-            and nearby communities.
+            Owner-operated carpet, tile, and upholstery cleaning serving Upland
+            and nearby Inland Empire communities.
           </p>
           <div className="mt-6 space-y-3 text-sm text-white/80">
             <p className="flex gap-3">

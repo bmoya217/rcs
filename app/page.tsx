@@ -1,11 +1,26 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Phone, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Droplets,
+  MapPin,
+  Phone,
+  Sparkles,
+} from "lucide-react";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import { ContactCta } from "@/components/ContactCta";
 import { ImageSlider } from "@/components/ImageSlider";
 import { ServiceCard } from "@/components/ServiceCard";
 import { featuredGallery } from "@/lib/gallery";
-import { highlights, services, serviceSlugs, site } from "@/lib/site";
+import {
+  appointmentPrep,
+  faqs,
+  highlights,
+  serviceAreas,
+  services,
+  serviceSlugs,
+  site,
+} from "@/lib/site";
 import { FaFacebookF, FaYelp } from "react-icons/fa";
 import { images } from "@/lib/images";
 
@@ -17,12 +32,12 @@ export default function HomePage() {
           <div>
             <p className="section-eyebrow">Royal Carpet Specialists</p>
             <h1 className="section-title-xl">
-              Professional carpet cleaning with a family-owned touch.
+              Carpet cleaning from George and his local crew.
             </h1>
             <p className="section-description">
-              Carpet, tile, upholstery, odor treatment, repairs, natural stone,
-              and fabric protection for homes and small businesses Upland and
-              surrounding areas.
+              Owner-operated carpet, tile, upholstery, odor treatment, repair,
+              and fabric protection for homes, rentals, and small businesses in
+              Upland and nearby communities.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -71,7 +86,7 @@ export default function HomePage() {
                 <div>
                   <p className="font-black">Brushless rotary steam cleaning</p>
                   <p className="text-sm text-muted">
-                    Designed to restore color and resiliency.
+                    Truck-mounted equipment for lived-in carpets.
                   </p>
                 </div>
               </div>
@@ -105,12 +120,12 @@ export default function HomePage() {
             <div>
               <p className="section-eyebrow">Services</p>
               <h2 className="section-title">
-                Cleaning for carpets, tile, upholstery, and more.
+                Cleaning for real homes, pets, stairs, spills, and traffic.
               </h2>
               <p className="section-description">
-                Start with carpet cleaning, add upholstery or tile while the
-                truck is there, or call about specialty services like odor
-                treatment, repair, stretching, and Scotchgard protection.
+                Start with carpet cleaning, add upholstery or tile while George
+                is there, or call about pet odor, repair, stretching, natural
+                stone, and Scotchgard protection.
               </p>
             </div>
             <Link href="/services" className="button-secondary shrink-0">
@@ -136,13 +151,14 @@ export default function HomePage() {
             <p className="section-description">
               Royal Carpet Specialists uses a truck-mounted carpet cleaning
               system that helps remove stains, odors, and allergens while
-              leaving little to no cleaning solution behind.
+              extracting soil and moisture more effectively than small portable
+              machines.
             </p>
             <div className="mt-8 space-y-4">
               {[
                 "Professional equipment for stronger extraction",
-                "A practical clean for real homes, pets, spills, and traffic lanes",
-                "Options for carpet, tile, furniture, odors, and protection",
+                "A practical clean for pets, spills, stairs, and traffic lanes",
+                "Access to an outdoor hose spigot is needed for most truck-mounted jobs",
               ].map((item) => (
                 <p key={item} className="flex gap-3 font-semibold leading-7">
                   <CheckCircle2 className="mt-1 size-5 shrink-0 text-brand" />{" "}
@@ -176,10 +192,11 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
               <p className="section-eyebrow">Before & After</p>
-              <h2 className="section-title">Show the difference clearly.</h2>
+              <h2 className="section-title">See the difference clearly.</h2>
               <p className="section-description">
-                Upload finished jobs to Cloudinary and feature the strongest
-                before/after examples here and on the gallery page.
+                Recent work from Royal Carpet Specialists, including carpets,
+                stairs, upholstery, tile, and problem areas that needed extra
+                attention.
               </p>
             </div>
             <Link href="/gallery" className="button-secondary shrink-0">
@@ -196,16 +213,94 @@ export default function HomePage() {
       </section>
 
       <section className="page-section bg-white">
+        <div className="section-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="section-eyebrow">Before we arrive</p>
+            <h2 className="section-title">A little prep helps the job go smoothly.</h2>
+            <p className="section-description">
+              George uses truck-mounted cleaning equipment for most carpet jobs.
+              Please plan for water access, parking, and a clear path from the
+              truck to the areas being cleaned.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {appointmentPrep.map((item, index) => (
+              <div key={item} className="card flex gap-4 p-5">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-black text-white">
+                  {index + 1}
+                </div>
+                <p className="font-semibold leading-7">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="section-container grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="section-eyebrow">Service area</p>
+            <h2 className="section-title">Based in Upland. Call if you are nearby.</h2>
+            <p className="section-description">
+              Royal Carpet Specialists regularly works around Upland and nearby
+              foothill and Inland Empire communities. Larger jobs farther out
+              may be possible, so it is always worth calling to confirm.
+            </p>
+          </div>
+          <div className="card-padded">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="rounded-2xl bg-brand-soft p-3 text-brand">
+                <MapPin className="size-6" />
+              </div>
+              <h3 className="text-2xl font-black">Nearby cities</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {serviceAreas.map((area) => (
+                <span key={area} className="badge bg-white">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section bg-white">
+        <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="section-eyebrow">Questions</p>
+            <h2 className="section-title">What to know before scheduling.</h2>
+            <p className="section-description">
+              A quick call is still the best way to talk through rooms, stains,
+              pet odor, furniture, parking, and water access.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="card-padded">
+                <div className="flex gap-4">
+                  <Droplets className="mt-1 size-5 shrink-0 text-brand" />
+                  <div>
+                    <h3 className="text-xl font-black">{faq.question}</h3>
+                    <p className="mt-3 leading-7 text-muted">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="section-eyebrow">Reviews & social proof</p>
+            <p className="section-eyebrow">Reviews & profiles</p>
             <h2 className="section-title">
               A small local business people can call directly.
             </h2>
             <p className="section-description">
-              Keep the website simple: phone-first contact, clear services,
-              before-and-after photos, and links to active review/social
-              profiles.
+              Check active profiles for reviews, photos, and recent updates from
+              Royal Carpet Specialists.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
