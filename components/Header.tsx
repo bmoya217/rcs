@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
+import { MobileNav } from "@/components/MobileNav";
 import { navLinks, site } from "@/lib/site";
 
 export const Header = () => {
@@ -30,6 +31,12 @@ export const Header = () => {
           <Phone className="mr-2 size-4" />
           {site.phone}
         </a>
+
+        <MobileNav
+          links={navLinks}
+          phone={site.phone}
+          phoneHref={site.phoneHref}
+        />
       </div>
     </header>
   );
