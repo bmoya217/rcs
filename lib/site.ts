@@ -256,6 +256,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -282,7 +283,7 @@ export const appointmentPrep = [
   "Please make sure there is access to a working outdoor hose spigot for the truck-mounted cleaning system.",
   "Clear a parking spot as close as practical to the rooms being cleaned so the hoses can reach safely.",
   "Pick up small items, cords, toys, and breakables before the appointment.",
-  "Move small furniture if you can. If something is difficult, ask George what makes sense when you schedule.",
+  "Moving small furniture helps, but it is not required. George can move items a two-person crew can safely handle.",
   "Point out pet spots, stains, odors, delicate areas, or carpet repairs before cleaning starts.",
 ];
 
@@ -300,7 +301,12 @@ export const faqs = [
   {
     question: "Do I need to move furniture?",
     answer:
-      "Please pick up small items and move light furniture if you can. George can talk through larger pieces when you schedule and help decide what should be moved for the job.",
+      "No. Moving small furniture helps, but it is not required. George can move items that a two-person crew can safely handle and will talk through larger pieces when you schedule.",
+  },
+  {
+    question: "How should I prepare for your arrival?",
+    answer:
+      "Please pick up small items, cords, toys, and breakables; point out pet spots, stains, odors, delicate areas, or repairs; and make sure there is access to a working outdoor hose spigot and nearby parking for the truck.",
   },
   {
     question: "Can you remove pet odor?",
@@ -316,5 +322,20 @@ export const faqs = [
     question: "What areas do you serve?",
     answer:
       "Royal Carpet Specialists is based in Upland and regularly serves nearby Inland Empire and foothill communities. Larger jobs may be possible farther out, so call to confirm.",
+  },
+];
+
+export const reviewLinks = [
+  {
+    title: "Read Yelp reviews",
+    source: "Yelp",
+    href: site.yelp,
+    text: "See customer reviews, photos, and business details on the Royal Carpet Specialists Yelp profile.",
+  },
+  {
+    title: "See recent work",
+    source: "Facebook",
+    href: site.facebook,
+    text: "Browse photos and updates from jobs George has shared through the business Facebook page.",
   },
 ];

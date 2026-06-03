@@ -16,7 +16,7 @@ export const featuredGallery: GalleryItem[] = [
   },
   {
     id: "tile-grout-refresh",
-    title: "Kitchen Tile & Grout Refresh",
+    title: "Tile & Grout Refresh",
     service: "Tile Cleaning",
     beforePublicId: "gallery/tile_before",
     afterPublicId: "gallery/tile_after",

@@ -3,20 +3,22 @@ import {
   ArrowRight,
   CheckCircle2,
   Droplets,
+  ExternalLink,
   MapPin,
+  MessageCircle,
   Phone,
+  Star,
   Sparkles,
 } from "lucide-react";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import { ContactCta } from "@/components/ContactCta";
 import { ImageSlider } from "@/components/ImageSlider";
 import { ServiceCard } from "@/components/ServiceCard";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { featuredGallery } from "@/lib/gallery";
 import {
-  appointmentPrep,
-  faqs,
   highlights,
-  serviceAreas,
+  reviewLinks,
   services,
   serviceSlugs,
   site,
@@ -49,25 +51,31 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="card p-4">
-                <p className="text-3xl font-black text-brand">30+</p>
-                <p className="mt-1 text-sm font-semibold text-muted">
-                  Years cleaning
-                </p>
-              </div>
-              <div className="card p-4">
-                <p className="text-3xl font-black text-brand">8</p>
-                <p className="mt-1 text-sm font-semibold text-muted">
-                  Core services
-                </p>
-              </div>
-              <div className="card p-4">
-                <p className="text-3xl font-black text-brand">Local</p>
-                <p className="mt-1 text-sm font-semibold text-muted">
-                  Upland based
-                </p>
-              </div>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+              {serviceSlugs.slice(0, 4).map((slug) => {
+                const service = services[slug];
+                const Icon = service.icon;
+
+                return (
+                  <Link
+                    key={slug}
+                    href={service.href}
+                    className="group flex items-center gap-3 rounded-2xl border border-line bg-white p-4 shadow-sm transition hover:border-gold hover:text-brand"
+                  >
+                    <span className="shrink-0 rounded-xl bg-brand-soft p-2.5 text-brand">
+                      <Icon className="size-5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-black">
+                        {service.title}
+                      </span>
+                      <span className="mt-1 block text-xs font-semibold text-muted group-hover:text-brand">
+                        {service.eyebrow}
+                      </span>
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -213,121 +221,132 @@ export default function HomePage() {
       </section>
 
       <section className="page-section bg-white">
-        <div className="section-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="section-container">
           <div>
-            <p className="section-eyebrow">Before we arrive</p>
-            <h2 className="section-title">A little prep helps the job go smoothly.</h2>
+            <p className="section-eyebrow">Before scheduling</p>
+            <h2 className="section-title">A few practical things to know first.</h2>
             <p className="section-description">
-              George uses truck-mounted cleaning equipment for most carpet jobs.
-              Please plan for water access, parking, and a clear path from the
-              truck to the areas being cleaned.
+              Truck-mounted cleaning works best when George can park close to
+              the work area and connect to an outdoor hose spigot. Call if your
+              home layout, parking, or service area is unusual.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {appointmentPrep.map((item, index) => (
-              <div key={item} className="card flex gap-4 p-5">
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-black text-white">
-                  {index + 1}
-                </div>
-                <p className="font-semibold leading-7">{item}</p>
-              </div>
-            ))}
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <div className="card-padded">
+              <Droplets className="size-7 text-brand" />
+              <h3 className="mt-5 text-xl font-black">Water access</h3>
+              <p className="mt-3 leading-7 text-muted">
+                Most jobs need a working outdoor hose spigot for the
+                truck-mounted cleaning system.
+              </p>
+            </div>
+            <div className="card-padded">
+              <MapPin className="size-7 text-brand" />
+              <h3 className="mt-5 text-xl font-black">Nearby parking</h3>
+              <p className="mt-3 leading-7 text-muted">
+                A close parking spot helps the hoses reach safely from the truck
+                to the rooms being cleaned.
+              </p>
+            </div>
+            <div className="card-padded">
+              <MessageCircle className="size-7 text-brand" />
+              <h3 className="mt-5 text-xl font-black">Call to confirm</h3>
+              <p className="mt-3 leading-7 text-muted">
+                Larger jobs farther out may be possible. George can confirm
+                service area, timing, and prep by phone.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <Link href="/faq" className="button-secondary">
+              Read FAQ
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="page-section">
-        <div className="section-container grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <div>
-            <p className="section-eyebrow">Service area</p>
-            <h2 className="section-title">Based in Upland. Call if you are nearby.</h2>
-            <p className="section-description">
-              Royal Carpet Specialists regularly works around Upland and nearby
-              foothill and Inland Empire communities. Larger jobs farther out
-              may be possible, so it is always worth calling to confirm.
-            </p>
-          </div>
-          <div className="card-padded">
-            <div className="mb-5 flex items-center gap-3">
-              <div className="rounded-2xl bg-brand-soft p-3 text-brand">
-                <MapPin className="size-6" />
-              </div>
-              <h3 className="text-2xl font-black">Nearby cities</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {serviceAreas.map((area) => (
-                <span key={area} className="badge bg-white">
-                  {area}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section bg-white">
-        <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <div>
-            <p className="section-eyebrow">Questions</p>
-            <h2 className="section-title">What to know before scheduling.</h2>
-            <p className="section-description">
-              A quick call is still the best way to talk through rooms, stains,
-              pet odor, furniture, parking, and water access.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="card-padded">
-                <div className="flex gap-4">
-                  <Droplets className="mt-1 size-5 shrink-0 text-brand" />
-                  <div>
-                    <h3 className="text-xl font-black">{faq.question}</h3>
-                    <p className="mt-3 leading-7 text-muted">{faq.answer}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section">
-        <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div>
-            <p className="section-eyebrow">Reviews & profiles</p>
+        <div className="section-container grid min-w-0 gap-8 lg:grid-cols-[0.8fr_minmax(0,1.2fr)] lg:items-center">
+          <div className="min-w-0">
+            <p className="section-eyebrow">What customers say</p>
             <h2 className="section-title">
-              A small local business people can call directly.
+              Check real reviews before you call.
             </h2>
             <p className="section-description">
-              Check active profiles for reviews, photos, and recent updates from
-              Royal Carpet Specialists.
+              Royal Carpet Specialists has served local homes and businesses for
+              decades. Read recent customer reviews on Yelp, see work photos on
+              Facebook, or call George directly with questions about your job.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <a
-              href={site.yelp}
-              target="_blank"
-              rel="noreferrer"
-              className="card-padded group"
-            >
-              <FaYelp className="size-7 text-brand" />
-              <h3 className="mt-5 text-2xl font-black">Yelp</h3>
-              <p className="mt-3 text-muted">
-                View profile, photos, and customer reviews.
-              </p>
-            </a>
-            <a
-              href={site.facebook}
-              target="_blank"
-              rel="noreferrer"
-              className="card-padded group"
-            >
-              <FaFacebookF className="size-7 text-brand" />
-              <h3 className="mt-5 text-2xl font-black">Facebook</h3>
-              <p className="mt-3 text-muted">
-                Follow updates and recent work from Royal Carpet Specialists.
-              </p>
-            </a>
+          <div className="grid min-w-0 max-w-full gap-4 md:grid-cols-2">
+            <div className="min-w-0 max-w-full md:col-span-2">
+              <TestimonialCarousel
+                fallback={
+                  <div className="grid min-w-0 gap-4 md:grid-cols-2">
+                    {reviewLinks.map((link) => {
+                      const Icon =
+                        link.source === "Yelp" ? FaYelp : FaFacebookF;
+
+                      return (
+                        <a
+                          key={link.source}
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="card-padded group flex h-full flex-col"
+                        >
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="rounded-2xl bg-brand-soft p-3 text-brand">
+                              <Icon className="size-7" />
+                            </div>
+                            <ExternalLink className="size-5 text-muted transition group-hover:translate-x-1 group-hover:text-brand" />
+                          </div>
+                          <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-brand">
+                            {link.source}
+                          </p>
+                          <h3 className="mt-2 text-2xl font-black">
+                            {link.title}
+                          </h3>
+                          <p className="mt-4 grow leading-7 text-muted">
+                            {link.text}
+                          </p>
+                          <div className="mt-6 flex items-center gap-1 text-gold">
+                            {[0, 1, 2, 3, 4].map((star) => (
+                              <Star key={star} className="size-4 fill-current" />
+                            ))}
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                }
+              />
+            </div>
+
+            <div className="card-padded md:col-span-2">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 rounded-2xl bg-brand-soft p-3 text-brand">
+                    <MessageCircle className="size-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black">
+                      Prefer to talk it through?
+                    </h3>
+                    <p className="mt-2 leading-7 text-muted">
+                      Call George directly and describe the rooms, stains, pet
+                      odor, furniture, parking, and water access.
+                    </p>
+                  </div>
+                </div>
+                <a href={site.phoneHref} className="button-primary shrink-0">
+                  <Phone className="mr-2 size-4" />
+                  {site.phone}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

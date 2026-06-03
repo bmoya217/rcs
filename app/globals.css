@@ -57,7 +57,7 @@ body {
   }
 
   .section-container-narrow {
-    @apply mx-auto max-w-4xl;
+    @apply mx-auto max-w-screen;
   }
 
   .section-eyebrow {
