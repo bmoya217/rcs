@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { getCloudinaryUrl } from "@/lib/cloudinary";
+"use client";
+
+import { CldImage } from "next-cloudinary";
 
 type CloudinaryImageProps = {
   publicId: string;
@@ -8,6 +9,7 @@ type CloudinaryImageProps = {
   height?: number;
   className?: string;
   priority?: boolean;
+  gravity?: string;
 };
 
 export const CloudinaryImage = ({
@@ -17,15 +19,20 @@ export const CloudinaryImage = ({
   height = 800,
   className,
   priority = false,
+  gravity = "auto",
 }: CloudinaryImageProps) => {
   return (
-    <Image
-      src={getCloudinaryUrl({ publicId, width, height })}
+    <CldImage
+      src={publicId}
       alt={alt}
       width={width}
       height={height}
-      priority={priority}
+      crop="fill"
+      quality="auto"
+      format="auto"
+      preload={priority}
       className={className}
+      gravity={gravity}
     />
   );
 };

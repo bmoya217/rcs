@@ -7,6 +7,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { featuredGallery } from "@/lib/gallery";
 import { highlights, services, serviceSlugs, site } from "@/lib/site";
 import { FaFacebookF, FaYelp } from "react-icons/fa";
+import { images } from "@/lib/images";
 
 export default function HomePage() {
   return (
@@ -57,7 +58,7 @@ export default function HomePage() {
 
           <div className="hero-panel p-3">
             <CloudinaryImage
-              publicId="home/hero-professional-carpet-cleaning-living-room"
+              publicId={images.home.hero}
               alt="Freshly cleaned living room carpet"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
               priority
@@ -153,14 +154,15 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="image-frame sm:translate-y-8">
               <CloudinaryImage
-                publicId="home/truck-mounted-cleaning-equipment"
+                publicId={images.home.truck}
                 alt="Truck mounted carpet cleaning equipment"
                 className="aspect-[4/5] w-full object-cover"
+                gravity="south"
               />
             </div>
             <div className="image-frame">
               <CloudinaryImage
-                publicId="home/carpet-cleaning-stairs-attachment"
+                publicId={images.home.upholstery}
                 alt="Carpet cleaning stairs attachment"
                 className="aspect-[4/5] w-full object-cover"
               />

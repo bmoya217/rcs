@@ -43,7 +43,7 @@ export const services = {
     eyebrow: "Deep steam cleaning",
     href: "/services/carpet-cleaning",
     icon: Home,
-    imagePublicId: "services/carpet-cleaning/truck-mounted-carpet-cleaning-living-room",
+    imagePublicId: "services/living_room",
     summary:
       "Truck-mounted carpet cleaning that helps remove stains, odors, allergens, and residue so carpets look brighter and stay cleaner longer.",
     intro:
@@ -60,14 +60,14 @@ export const services = {
       "Steam clean using professional truck-mounted equipment.",
       "Groom and review the finished work with you before wrapping up.",
     ],
-    galleryFolder: "gallery/carpet-cleaning-before-after",
+    galleryFolder: "gallery/carpet",
   },
   "tile-cleaning": {
     title: "Tile Cleaning",
     eyebrow: "Tile & grout refresh",
     href: "/services/tile-cleaning",
     icon: Droplets,
-    imagePublicId: "services/tile-cleaning/tile-and-grout-cleaning-kitchen-floor",
+    imagePublicId: "services/tile",
     summary:
       "Professional tile and grout cleaning for kitchens, bathrooms, entryways, and other hard-surface areas that need a brighter finish.",
     intro:
@@ -84,14 +84,14 @@ export const services = {
       "Extract soil and rinse the surface.",
       "Review grout lines and high-traffic areas before finishing.",
     ],
-    galleryFolder: "gallery/tile-cleaning-before-after",
+    galleryFolder: "gallery/tile",
   },
   "upholstery-cleaning": {
     title: "Upholstery Cleaning",
     eyebrow: "Furniture refresh",
     href: "/services/upholstery-cleaning",
     icon: Sparkles,
-    imagePublicId: "services/upholstery-cleaning/upholstery-cleaning-sofa-chair",
+    imagePublicId: "services/upholstery",
     summary:
       "Refresh sofas, chairs, sectionals, and other upholstered furniture that has collected stains, dust, allergens, and everyday grime.",
     intro:
@@ -108,14 +108,14 @@ export const services = {
       "Clean upholstery with tools suited for furniture and stairs.",
       "Allow proper drying time before heavy use.",
     ],
-    galleryFolder: "gallery/upholstery-cleaning-before-after",
+    galleryFolder: "gallery/upholstery",
   },
   "fire-restoration": {
     title: "Fire Restoration",
     eyebrow: "Damage assessment",
     href: "/services/fire-restoration",
     icon: Flame,
-    imagePublicId: "services/fire-restoration/fire-damage-carpet-restoration-assessment",
+    imagePublicId: "services/fire",
     summary:
       "Fire-damaged carpet does not always need to be replaced. Call to see whether cleaning or restoration is a realistic option.",
     intro:
@@ -132,14 +132,14 @@ export const services = {
       "Explain realistic cleaning/restoration options.",
       "Proceed only when the expected result makes sense.",
     ],
-    galleryFolder: "gallery/fire-restoration-before-after",
+    galleryFolder: "gallery/fire",
   },
   "odor-elimination": {
     title: "Odor Elimination",
     eyebrow: "Freshen problem areas",
     href: "/services/odor-elimination",
     icon: Wind,
-    imagePublicId: "services/odor-elimination/pet-odor-treatment-carpet-cleaning",
+    imagePublicId: "services/odor",
     summary:
       "Odor treatment for carpet and upholstery affected by pets, spills, smoke, moisture, or everyday use.",
     intro:
@@ -156,14 +156,14 @@ export const services = {
       "Clean/extract the area when paired with service.",
       "Review follow-up expectations based on severity.",
     ],
-    galleryFolder: "gallery/odor-elimination-before-after",
+    galleryFolder: "gallery/odor",
   },
   "repair-and-stretch": {
     title: "Repair and Stretch",
     eyebrow: "Carpet fixes",
     href: "/services/repair-and-stretch",
     icon: StretchHorizontal,
-    imagePublicId: "services/repair-and-stretch/carpet-stretching-repair-wrinkles",
+    imagePublicId: "services/stretch",
     summary:
       "Repair ripples, wrinkles, loose carpet, and small damaged areas so rooms look cleaner and safer before or after cleaning.",
     intro:
@@ -180,14 +180,14 @@ export const services = {
       "Make the repair and trim/reset areas as needed.",
       "Clean afterward when requested for a finished look.",
     ],
-    galleryFolder: "gallery/repair-and-stretch-before-after",
+    galleryFolder: "gallery/stretch",
   },
   "marble-and-travertine": {
     title: "Marble and Travertine",
     eyebrow: "Natural stone care",
     href: "/services/marble-and-travertine",
     icon: Gem,
-    imagePublicId: "services/marble-and-travertine/marble-travertine-floor-cleaning-polishing",
+    imagePublicId: "services/marble",
     summary:
       "Care for marble and travertine surfaces that need cleaning, attention, or a more polished finished appearance.",
     intro:
@@ -204,14 +204,14 @@ export const services = {
       "Clean and treat according to the surface needs.",
       "Discuss maintenance recommendations after service.",
     ],
-    galleryFolder: "gallery/marble-and-travertine-before-after",
+    galleryFolder: "gallery/marble",
   },
   scotchgard: {
     title: "3M Scotchgard",
     eyebrow: "Protective treatment",
     href: "/services/scotchgard",
     icon: Shield,
-    imagePublicId: "services/scotchgard/scotchgard-fabric-carpet-protection-application",
+    imagePublicId: "services/scotchgard",
     summary:
       "Add stain and water-repellent protection to carpet, rugs, and upholstery after cleaning.",
     intro:
@@ -228,16 +228,28 @@ export const services = {
       "Allow appropriate drying time.",
       "Review simple care tips to help spills blot up easier.",
     ],
-    galleryFolder: "gallery/scotchgard-protected-surfaces",
+    galleryFolder: "gallery/scotchgard",
   },
 } satisfies Record<ServiceSlug, unknown>;
 
 export type Service = (typeof services)[ServiceSlug];
 
 export const highlights = [
-  { icon: BadgeCheck, title: "Family-owned", text: "Local service with direct communication from George." },
-  { icon: Brush, title: "30+ years", text: "Decades of carpet, tile, and upholstery cleaning experience." },
-  { icon: Home, title: "Residential & small business", text: "Homes, rentals, offices, and move-out cleanings." },
+  {
+    icon: BadgeCheck,
+    title: "Family-owned",
+    text: "Local service with direct communication from George.",
+  },
+  {
+    icon: Brush,
+    title: "30+ years",
+    text: "Decades of carpet, tile, and upholstery cleaning experience.",
+  },
+  {
+    icon: Home,
+    title: "Residential & small business",
+    text: "Homes, rentals, offices, and move-out cleanings.",
+  },
 ];
 
 export const navLinks = [

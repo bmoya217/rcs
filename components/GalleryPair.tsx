@@ -1,5 +1,7 @@
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import type { GalleryItem } from "@/lib/gallery";
+import { BeforeAfterSlider } from "./BeforeAndAfterSlider";
+import { after } from "node:test";
 
 type GalleryPairProps = {
   item: GalleryItem;
@@ -15,18 +17,32 @@ export const GalleryPair = ({ item }: GalleryPairProps) => {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <div>
-          <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-muted">Before</p>
-          <div className="image-frame">
-            <CloudinaryImage publicId={item.beforePublicId} alt={`${item.title} before`} className="aspect-[4/3] w-full object-cover" />
-          </div>
+      <div className="mt-6">
+        <div className="flex flex-row justify-evenly">
+          <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-muted">
+            Before
+          </p>
+          <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-muted">
+            After
+          </p>
         </div>
-        <div>
-          <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-muted">After</p>
-          <div className="image-frame">
-            <CloudinaryImage publicId={item.afterPublicId} alt={`${item.title} after`} className="aspect-[4/3] w-full object-cover" />
-          </div>
+        <div className="image-frame">
+          <BeforeAfterSlider
+            before={
+              <CloudinaryImage
+                publicId={item.beforePublicId}
+                alt={`${item.title} before`}
+                className="aspect-[4/3] w-full object-cover"
+              />
+            }
+            after={
+              <CloudinaryImage
+                publicId={item.afterPublicId}
+                alt={`${item.title} after`}
+                className="aspect-[4/3] w-full object-cover"
+              />
+            }
+          />
         </div>
       </div>
     </article>

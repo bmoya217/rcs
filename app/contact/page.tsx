@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import { site } from "@/lib/site";
 import { FaFacebookF, FaYelp } from "react-icons/fa";
+import { images } from "@/lib/images";
 
 export default function ContactPage() {
   return (
@@ -29,7 +30,7 @@ export default function ContactPage() {
           </div>
           <div className="hero-panel p-3">
             <CloudinaryImage
-              publicId="contact/george-moya-royal-carpet-specialists-truck"
+              publicId={images.contact.van}
               alt="Royal Carpet Specialists service truck or owner photo"
               className="aspect-[4/3] w-full rounded-[1.5rem] object-cover"
               priority
