@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Royal Carpet Specialists crowned R logo">
+  <path
+    fill="#c89b3c"
+    stroke="#fff6e7"
+    stroke-linejoin="round"
+    stroke-width="18"
+    d="M111 139l49-77 70 72 26-105 26 105 70-72 49 77-28 69H139l-28-69z"
+  />
+  <path
+    fill="#7a1f16"
+    stroke="#fff6e7"
+    stroke-linejoin="round"
+    stroke-width="20"
+    d="M134 472V180h154c43 0 77 11 101 33 25 22 37 52 37 91 0 48-22 84-65 106l82 62H338l-66-54h-52v54h-86zm86-132h63c35 0 53-14 53-43 0-27-18-41-53-41h-63v84z"
+  />
+</svg>
