@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { ContactCta } from "@/components/ContactCta";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { getCarouselImages } from "@/lib/cloudinary";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Cleaning Results Gallery",
+  description:
+    "See carpet, upholstery, tile, stairs, and problem-area cleaning results from Royal Carpet Specialists near Upland, CA.",
+  path: "/gallery",
+});
 
 const GalleryPage = async () => {
   const images = await getCarouselImages("carousel");

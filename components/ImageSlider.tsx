@@ -2,20 +2,19 @@
 
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import type { GalleryItem } from "@/lib/gallery";
-import { useEffect, useState } from "react";
-import { ReactCompareSlider } from "react-compare-slider";
+import dynamic from "next/dynamic";
+
+const ReactCompareSlider = dynamic(
+  () =>
+    import("react-compare-slider").then((module) => module.ReactCompareSlider),
+  { ssr: false },
+);
 
 type GalleryPairProps = {
   item: GalleryItem;
 };
 
 export const ImageSlider = ({ item }: GalleryPairProps) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <article className="card-padded">
       <div className="flex items-start justify-between gap-4">
@@ -34,27 +33,24 @@ export const ImageSlider = ({ item }: GalleryPairProps) => {
             After
           </p>
         </div>
-        <div className="image-frame">
-          {mounted ? (
-            <ReactCompareSlider
-              itemOne={
-                <CloudinaryImage
-                  publicId={item.beforePublicId}
-                  alt={`${item.title} before`}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              }
-              itemTwo={
-                <CloudinaryImage
-                  publicId={item.afterPublicId}
-                  alt={`${item.title} after`}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              }
-            />
-          ) : (
-            <></>
-          )}
+        <div className="image-frame aspect-4/3">
+          <ReactCompareSlider
+            className="h-full w-full"
+            itemOne={
+              <CloudinaryImage
+                publicId={item.beforePublicId}
+                alt={`${item.title} before`}
+                className="aspect-4/3 w-full object-cover"
+              />
+            }
+            itemTwo={
+              <CloudinaryImage
+                publicId={item.afterPublicId}
+                alt={`${item.title} after`}
+                className="aspect-4/3 w-full object-cover"
+              />
+            }
+          />
         </div>
       </div>
     </article>

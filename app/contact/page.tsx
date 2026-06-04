@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import { appointmentPrep, serviceAreas, site } from "@/lib/site";
 import { FaFacebookF, FaYelp } from "react-icons/fa";
 import { images } from "@/lib/images";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Contact",
+  description:
+    "Call or email Royal Carpet Specialists for a carpet, tile, upholstery, odor, repair, or stone cleaning estimate near Upland, CA.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

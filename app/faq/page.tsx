@@ -2,16 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, HelpCircle, MapPin, Phone } from "lucide-react";
 import { appointmentPrep, faqs, serviceAreas, site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "FAQ",
   description:
     "Questions about scheduling, water access, drying time, furniture, pet odor, stairs, upholstery, and service areas.",
-};
+  path: "/faq",
+});
 
 export default function FaqPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <section className="page-section bg-cream">
         <div className="section-container-narrow text-center">
           <p className="section-eyebrow">FAQ</p>

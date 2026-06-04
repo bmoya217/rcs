@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   ArrowRight,
   CheckCircle2,
@@ -25,6 +26,13 @@ import {
 } from "@/lib/site";
 import { FaFacebookF, FaYelp } from "react-icons/fa";
 import { images } from "@/lib/images";
+import { defaultDescription, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Carpet Cleaning in Upland, CA",
+  description: defaultDescription,
+  path: "/",
+});
 
 export default function HomePage() {
   return (

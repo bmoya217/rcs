@@ -13,6 +13,12 @@ export type CarouselImage = {
   height: number;
 };
 
+type CloudinaryCarouselResource = {
+  public_id: string;
+  width: number;
+  height: number;
+};
+
 export const getCarouselImages = async (
   folder: string,
   maxResults = 12,
@@ -23,7 +29,7 @@ export const getCarouselImages = async (
     .max_results(maxResults)
     .execute();
 
-  return result.resources.map((image: any) => ({
+  return (result.resources as CloudinaryCarouselResource[]).map((image) => ({
     publicId: image.public_id,
     width: image.width,
     height: image.height,

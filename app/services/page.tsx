@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { ContactCta } from "@/components/ContactCta";
 import { ServiceCard } from "@/components/ServiceCard";
 import { services, serviceSlugs } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Cleaning Services",
+  description:
+    "Explore carpet, tile, upholstery, odor, repair, natural stone, fire restoration, and Scotchgard services near Upland, CA.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

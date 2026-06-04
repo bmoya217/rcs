@@ -13,8 +13,10 @@ import {
 
 export const site = {
   name: "Royal Carpet Specialists",
+  url: "https://royalcarpetspecialists.com",
   tagline: "Owner-operated carpet, tile, and upholstery cleaning.",
   phone: "(909) 802-4624",
+  phoneInternational: "+19098024624",
   phoneHref: "tel:+19098024624",
   email: "george@royalcarpetspecialists.com",
   emailHref: "mailto:george@royalcarpetspecialists.com",
