@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Royal Carpet Specialists
+
+Next.js site for Royal Carpet Specialists, an owner-operated carpet, tile, upholstery, odor, repair, and stone cleaning business based in Upland, CA.
+
+## Tech Stack
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Cloudinary / next-cloudinary for images
+- Embla Carousel for auto-scrolling image strips
+- react-compare-slider for before-and-after comparisons
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Run the production build locally:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run linting:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create `.env.local` with these values:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+`NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` is used by client-rendered Cloudinary images. `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` are server-only and used to fetch gallery resources from Cloudinary.
+
+## Project Structure
+
+- `app/` - App Router pages, metadata routes, and global layout.
+- `components/` - Shared UI components such as header, footer, service cards, image carousel, testimonial carousel, and before/after sliders.
+- `lib/site.ts` - Business details, service definitions, service areas, FAQs, and review links.
+- `lib/gallery.ts` - Featured before/after gallery items used on the home and gallery pages.
+- `lib/images.ts` - Cloudinary public IDs for static page imagery.
+- `lib/cloudinary.ts` - Server-only Cloudinary search helper for carousel images.
+- `public/` - Static fallback assets.
+
+## Content Notes
+
+Most business copy lives in `lib/site.ts`. Update phone numbers, service areas, FAQs, review links, service descriptions, and service image public IDs there.
+
+The gallery page uses two kinds of content:
+
+- Featured before/after comparisons from `lib/gallery.ts`.
+- Recent work images fetched from the Cloudinary `carousel` folder.
+
+Before/after slider images should use paired Cloudinary public IDs, such as `gallery/carpet_before` and `gallery/carpet_after`. Recent standalone work photos can be uploaded to the `carousel` folder and will appear in the moving gallery strip.
+
+## Image Guidance
+
+Use real job photos whenever possible. The most useful gallery images show:
+
+- Same-angle before and after shots.
+- Traffic lanes, stairs, spots, tile grout, upholstery, and pet-related problem areas.
+- A few wider room shots for context.
+
+Cloudinary remote images are allowed through `next.config.ts` via `res.cloudinary.com`.
+
+## Next.js Notes
+
+This project uses Next.js 16, which has breaking changes from earlier versions. Before changing routing, metadata, data fetching, images, or server/client component behavior, check the bundled docs in:
+
+```txt
+node_modules/next/dist/docs/
+```
