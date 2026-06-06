@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <section className="page-section bg-cream">
+      <section className="page-section section-feature">
         <div className="section-container-narrow text-center">
           <p className="section-eyebrow">Our Services</p>
           <h1 className="section-title-xl">
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {serviceSlugs.map((slug) => (
             <ServiceCard key={slug} service={services[slug]} />

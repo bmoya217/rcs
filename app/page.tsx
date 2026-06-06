@@ -37,7 +37,7 @@ export const metadata: Metadata = pageMetadata({
 export default function HomePage() {
   return (
     <>
-      <section className="page-section bg-cream">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <p className="section-eyebrow">Royal Carpet Specialists</p>
@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container">
           <div className="grid gap-5 md:grid-cols-3">
             {highlights.map((highlight) => {
@@ -130,7 +130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <p className="section-eyebrow">Why it works</p>
@@ -203,7 +203,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section bg-cream">
+      <section className="page-section section-feature">
         <div className="section-container">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -228,7 +228,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container">
           <div>
             <p className="section-eyebrow">Before scheduling</p>
@@ -275,7 +275,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid min-w-0 gap-8 lg:grid-cols-[0.8fr_minmax(0,1.2fr)] lg:items-center">
           <div className="min-w-0">
             <p className="section-eyebrow">What customers say</p>

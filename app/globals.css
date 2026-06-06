@@ -52,6 +52,18 @@ body {
     @apply px-5 py-16 sm:px-6 lg:px-8 lg:py-24;
   }
 
+  .section-warm {
+    @apply bg-background;
+  }
+
+  .section-paper {
+    @apply bg-background;
+  }
+
+  .section-feature {
+    @apply bg-background;
+  }
+
   .section-container {
     @apply mx-auto max-w-7xl;
   }

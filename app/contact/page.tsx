@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="page-section bg-cream">
+      <section className="page-section section-feature">
         <div className="section-container grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="section-eyebrow">Contact George Moya</p>
@@ -48,7 +48,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-6 lg:grid-cols-3">
           <div className="card-padded">
             <Phone className="size-7 text-brand" />
@@ -90,7 +90,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Before your appointment</p>
@@ -112,7 +112,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Service area</p>
@@ -134,7 +134,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Online profiles</p>

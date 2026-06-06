@@ -33,7 +33,7 @@ export default function FaqPage() {
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <section className="page-section bg-cream">
+      <section className="page-section section-feature">
         <div className="section-container-narrow text-center">
           <p className="section-eyebrow">FAQ</p>
           <h1 className="section-title-xl">Questions before you schedule.</h1>
@@ -54,7 +54,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Before arrival</p>
@@ -75,7 +75,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Common questions</p>
@@ -101,7 +101,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Service area</p>

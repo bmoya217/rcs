@@ -10,7 +10,7 @@ export const ServicePage = ({ service }: { service: Service }) => {
 
   return (
     <>
-      <section className="page-section bg-cream">
+      <section className="page-section section-feature">
         <div className="section-container grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="section-eyebrow">{service.eyebrow}</p>
@@ -37,7 +37,7 @@ export const ServicePage = ({ service }: { service: Service }) => {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-8 lg:grid-cols-3">
           <div className="card-padded lg:col-span-1">
             <div className="mb-6 inline-flex rounded-2xl bg-brand-soft p-4 text-brand">
@@ -62,7 +62,7 @@ export const ServicePage = ({ service }: { service: Service }) => {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Process</p>
@@ -86,7 +86,7 @@ export const ServicePage = ({ service }: { service: Service }) => {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-warm">
         <div className="section-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="section-eyebrow">Before we arrive</p>
@@ -108,7 +108,7 @@ export const ServicePage = ({ service }: { service: Service }) => {
         </div>
       </section>
 
-      <section className="page-section bg-white">
+      <section className="page-section section-paper">
         <div className="section-container grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <p className="section-eyebrow">Service area</p>

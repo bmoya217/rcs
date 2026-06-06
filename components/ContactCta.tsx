@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const ContactCta = () => {
   return (
-    <section className="page-section">
+    <section className="page-section section-warm">
       <div className="section-container">
         <div className="overflow-hidden rounded-[2rem] bg-brand-dark p-8 text-white shadow-xl sm:p-12 lg:p-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
