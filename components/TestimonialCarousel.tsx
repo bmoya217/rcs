@@ -17,32 +17,28 @@ type TestimonialCarouselProps = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Rose W.",
+    name: "Nicole S.",
     location: "Local customer",
     quote:
-      "Placeholder testimonial for carpet and upholstery work. Replace this with a short customer-approved quote before launch.",
-    source: "Yelp",
+      "George cleaned our sectional and dining chairs, and I couldn't believe the difference. He took his time, explained what he was doing, and got stains out we thought were permanent.",
   },
   {
-    name: "Carl C.",
+    name: "Corbin G.",
     location: "Local customer",
     quote:
-      "Placeholder testimonial about careful service, clean carpets, and working directly with George.",
-    source: "Yelp",
+      "George did an incredible job on our carpets. We had years of stains from kids and pets, and somehow he got everything looking fresh again. You can tell he really cares about doing the job right.",
   },
   {
-    name: "Thomas B.",
+    name: "Kyle G.",
     location: "Local customer",
     quote:
-      "Placeholder testimonial for pet spots or odor treatment. Keep this short so the card stays clean on mobile.",
-    source: "Yelp",
+      "“I've recommended George to three different family members already. He's honest, hardworking, and the results always exceed expectations. The tile and grout in our kitchen honestly looked brand new after he finished.",
   },
   {
-    name: "Kevin S.",
+    name: "Eli C.",
     location: "Local customer",
     quote:
-      "Placeholder testimonial for carpet and tile cleaning. Replace with approved wording from your dad.",
-    source: "Yelp",
+      "George is one of the few people I completely trust working in my home. He's professional, friendly, and takes a lot of pride in his work. That kind of service is hard to find nowadays.",
   },
 ];
 
@@ -137,7 +133,10 @@ export const TestimonialCarousel = ({
                   </div>
                   <div className="flex shrink-0 text-gold">
                     {[0, 1, 2, 3, 4].map((star) => (
-                      <Star key={star} className="size-3.5 fill-current sm:size-4" />
+                      <Star
+                        key={star}
+                        className="size-3.5 fill-current sm:size-4"
+                      />
                     ))}
                   </div>
                 </div>
